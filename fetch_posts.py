@@ -74,12 +74,10 @@ class PostFetcher:
 		await self._fedi.verify_credentials()
 		self._completed_accounts = {}
 		async with anyio.create_task_group() as tg:
-			# for fqn in map(self.fqn, await self._fedi.following()):
-			#tg.start_soon(self._do_account, 'theresnotime@tech.lgbt')
-			tg.start_soon(self._do_account, 'theresnotime@labyrinth.zone')
-			tg.start_soon(self._do_account, 'theresnotime@wikis.world')
-			tg.start_soon(self._do_account, 'theresnotime@fox.nexus')
-
+      # for fqn in map(self.fqn, await self._fedi.following()):
+      tg.start_soon(self._do_account, 'ivy@lethallava.land')
+      tg.start_soon(self._do_account, 'ivy@labyrinth.zone')
+	
 	def fqn(self, acc: dict):
 		try:
 			return acc['fqn']
